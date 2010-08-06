@@ -7,6 +7,10 @@ Howto use:
 ---------
 
 	source ./bracat
+and then:
+	pn fox
+	unpn box
+	bracat xorg
 
 pn()
 ----
