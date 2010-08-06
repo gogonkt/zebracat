@@ -1,4 +1,3 @@
-unpn() { egrep "*$**/$" /var/db/paludis/repositories/un*/*repository| sed -e 's|/var/db/paludis/repositories/||' -e 's|/$||'};unpn box;
-pn2(){ for x in `echo /var/db/paludis/repositories/*/packages/*/*$**`;echo `basename $x` && grep -h SUMMARY= $x
-/*|head -1 };pn2 fox;
-bracat(){ pn2 $*;echo;unpn $*; }
+unpn() { egrep "*$**/$" /var/db/paludis/repositories/un*/*repository| sed -e 's|/var/db/paludis/repositories/||' -e 's|/$||'};
+pn(){ for x in `echo /var/db/paludis/repositories/*/packages/*/*$**`;echo `basename $x` && grep -h SUMMARY= $x/*|head -1 };
+bracat(){ pn $*;echo;unpn $*; }
