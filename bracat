@@ -1,4 +1,4 @@
 unpn() { egrep "$*.*/$" /var/db/paludis/repositories/un*/*repository| sed -e 's|/var/db/paludis/repositories/||' -e 's|/$||'};
 pcn(){ for x in $(echo /var/db/paludis/repositories/*/packages/*$2*/*$1*);echo $(basename $(dirname $x))/$(basename $x) && grep -h SUMMARY= $x/*|head -1 }
-pn(){ for x in $(echo /var/db/paludis/repositories/*/packages/*/*$**);echo $(basename $(dirname $x))/$(basename $x) && grep -h SUMMARY= $x/*|head -1}
+pn(){ for x in $(echo /var/db/paludis/repositories/*/packages/*/*$**);echo -e '\e[34;1m'$(basename $(dirname $x))/'\e[0m''\e[32;1m'$(basename $x)'\e[0m' && grep -h SUMMARY= $x/*|head -1}
 bracat(){ pn $*;echo;unpn $*; }
